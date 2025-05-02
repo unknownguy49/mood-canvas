@@ -1,23 +1,20 @@
-# Use a Python base image
-FROM python:3.12-slim
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-# Install Rust for building tokenizers and other necessary packages
-RUN apt-get update && apt-get install -y rustc cargo build-essential
-
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file into the container
-COPY requirements.txt .
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Install the dependencies
+# Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
-
-# Expose port 5000 for Flask app
+# Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Command to run the application
+# Define environment variable
+ENV FLASK_APP=app.py
+
+# Run app.py when the container launches
 CMD ["python", "app.py"]
