@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the sentiment analysis model from Hugging Face
-model = pipeline("sentiment-analysis")
+model = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
 
 # Endpoint for analyzing sentiment
 @app.route('/analyze', methods=['POST'])
@@ -29,7 +29,11 @@ def analyze():
         result = model(text)[0]
 
         # Return the result as JSON
-        return jsonify({"label": result['label'], "score": result['score']})
+        return jsonify({
+            "primary": result['label'].lower(),
+            "score": result['score']
+        })
+
 
     except Exception as e:
         # In case of an error, return a 500 error with the error message
