@@ -54,7 +54,7 @@ export function Features() {
   }
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden" ref={ref}>
+    <section id="features" className="py-20 px-4 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-gradient-radial from-violet-900/30 to-transparent opacity-40" />
 
       <div className="max-w-6xl mx-auto relative z-10">

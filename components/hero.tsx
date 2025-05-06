@@ -115,16 +115,20 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-8 py-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-glow">
-            Start Journaling
-          </Button>
+          <a href="#journal">
+            <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-8 py-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-glow">
+              Start Journaling
+            </Button>
+          </a>
 
-          <Button
-            variant="outline"
-            className="border-teal-400 text-teal-300 hover:bg-teal-400/10 px-8 py-6 rounded-full text-lg transition-all duration-300"
-          >
-            Learn More
-          </Button>
+          <a href="#features">
+            <Button
+              variant="outline"
+              className="border-teal-400 text-teal-300 hover:bg-teal-400/10 px-8 py-6 rounded-full text-lg transition-all duration-300"
+            >
+              Learn More
+            </Button>
+          </a>
         </motion.div>
       </div>
 

@@ -9,7 +9,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "MoodCanvas - AI Mood Journal & Visualizer",
   description: "Track your emotions and visualize your mood patterns with AI-powered journaling",
-    generator: 'v0.dev'
+    generator: 'Dibyadyuti Dutta',
+    icons: {
+      icon: "/favicon.png",
+    }
 }
 
 export default function RootLayout({

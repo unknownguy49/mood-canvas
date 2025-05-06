@@ -21,10 +21,10 @@ export function Footer() {
               AI-powered emotional journaling that helps you understand yourself better.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-violet-400 hover:text-violet-300 transition-colors">
+              <a target="_blank" href="https://github.com/unknownguy49" className="text-violet-400 hover:text-violet-300 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-violet-400 hover:text-violet-300 transition-colors">
+              <a href="mailto:dibyadyutidutta49@gmail.com" className="text-violet-400 hover:text-violet-300 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -39,20 +39,16 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-teal-100/70 hover:text-teal-100 transition-colors">
-                  About
+                <a href="#journal" className="text-teal-100/70 hover:text-teal-100 transition-colors">
+                  Journal
                 </a>
               </li>
               <li>
-                <a href="#" className="text-teal-100/70 hover:text-teal-100 transition-colors">
+                <a href="#features" className="text-teal-100/70 hover:text-teal-100 transition-colors">
                   Features
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-teal-100/70 hover:text-teal-100 transition-colors">
-                  Privacy
-                </a>
-              </li>
+              
             </ul>
           </div>
 

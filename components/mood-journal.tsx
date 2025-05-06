@@ -23,7 +23,7 @@ export function MoodJournal() {
   }
 
   return (
-    <section className="py-20 px-4" ref={ref}>
+    <section id="journal" className="py-20 px-4" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-12"
