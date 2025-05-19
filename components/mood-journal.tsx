@@ -5,7 +5,7 @@ import { useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Send, Sparkles } from "lucide-react"
+import { Send, Sparkles, Mic } from "lucide-react"
 import { useMood } from "@/context/mood-context"
 
 export function MoodJournal() {
@@ -20,6 +20,18 @@ export function MoodJournal() {
 
     await analyzeJournalEntry(journalEntry)
     setJournalEntry("")
+  }
+
+  const handleVoiceInput = async () => {
+    try {
+      const res = await fetch("/api/voice-to-text")
+      const data = await res.json()
+      if (data.transcript) {
+        setJournalEntry((prev) => prev + " " + data.transcript)
+      }
+    } catch (error) {
+      console.error("Voice input failed:", error)
+    }
   }
 
   return (
@@ -78,7 +90,16 @@ export function MoodJournal() {
             </motion.div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-between items-center mt-4">
+            <Button
+              type="button"
+              onClick={handleVoiceInput}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            >
+              <Mic className="w-4 h-4" />
+              Speak
+            </Button>
+
             <Button
               type="submit"
               disabled={!journalEntry.trim() || isAnalyzing}
